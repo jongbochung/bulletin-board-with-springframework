@@ -84,19 +84,19 @@ function ComAjax(opt_formId){
 var gfv_pageIndex = null;
 var gfv_eventName = null;
 function gfn_renderPaging(params){
-    var divId = params.divId; //페이징이 그려질 div id
-    gfv_pageIndex = params.pageIndex; //현재 위치가 저장될 input 태그
-    var totalCount = params.totalCount; //전체 조회 건수
-    var currentIndex = $("#"+params.pageIndex).val(); //현재 위치
+    var divId = params.divId; 
+    gfv_pageIndex = params.pageIndex; 
+    var totalCount = params.totalCount; 
+    var currentIndex = $("#"+params.pageIndex).val(); 
     if($("#"+params.pageIndex).length == 0 || gfn_isNull(currentIndex) == true){
         currentIndex = 1;
     }
      
-    var recordCount = params.recordCount; //페이지당 레코드 수
+    var recordCount = params.recordCount; 
     if(gfn_isNull(recordCount) == true){
         recordCount = 20;
     }
-    var totalIndexCount = Math.ceil(totalCount / recordCount); // 전체 인덱스 수
+    var totalIndexCount = Math.ceil(totalCount / recordCount); 
     gfv_eventName = params.eventName;
      
     $("#"+divId).empty();
@@ -109,19 +109,19 @@ function gfn_renderPaging(params){
     var prev = (parseInt((currentIndex-1)/10)*10) - 9 > 0 ? (parseInt((currentIndex-1)/10)*10) - 9 : 1; 
     var next = (parseInt((currentIndex-1)/10)+1) * 10 + 1 < totalIndexCount ? (parseInt((currentIndex-1)/10)+1) * 10 + 1 : totalIndexCount;
      
-    if(totalIndexCount > 10){ //전체 인덱스가 10이 넘을 경우, 맨앞, 앞 태그 작성
+    if(totalIndexCount > 10){ 
         preStr += "<a href='#this' class='pad_5' onclick='_movePage(1)'>[<<]</a>" +
                 "<a href='#this' class='pad_5' onclick='_movePage("+prev+")'>[<]</a>";
     }
-    else if(totalIndexCount <=10 && totalIndexCount > 1){ //전체 인덱스가 10보다 작을경우, 맨앞 태그 작성
+    else if(totalIndexCount <=10 && totalIndexCount > 1){ 
         preStr += "<a href='#this' class='pad_5' onclick='_movePage(1)'>[<<]</a>";
     }
      
-    if(totalIndexCount > 10){ //전체 인덱스가 10이 넘을 경우, 맨뒤, 뒤 태그 작성
+    if(totalIndexCount > 10){ 
         postStr += "<a href='#this' class='pad_5' onclick='_movePage("+next+")'>[>]</a>" +
                     "<a href='#this' class='pad_5' onclick='_movePage("+totalIndexCount+")'>[>>]</a>";
     }
-    else if(totalIndexCount <=10 && totalIndexCount > 1){ //전체 인덱스가 10보다 작을경우, 맨뒤 태그 작성
+    else if(totalIndexCount <=10 && totalIndexCount > 1){ 
         postStr += "<a href='#this' class='pad_5' onclick='_movePage("+totalIndexCount+")'>[>>]</a>";
     }
      

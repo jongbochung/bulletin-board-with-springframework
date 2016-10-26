@@ -5,7 +5,7 @@
 <%@ include file="/WEB-INF/include/include-header.jsp" %>
 </head>
 <body>
-	<h2>게시판 목록</h2>
+	<h2>Board List</h2>
 	<table class="board_list">
 		<colgroup>
 			<col width="10%"/>
@@ -15,10 +15,10 @@
 		</colgroup>
 		<thead>
 			<tr>
-				<th scope="col">글번호</th>
-				<th scope="col">제목</th>
-				<th scope="col">조회수</th>
-				<th scope="col">작성일</th>
+				<th scope="col">SEQ</th>
+				<th scope="col">TITLE</th>
+				<th scope="col">HITS</th>
+				<th scope="col">DATE</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -30,7 +30,7 @@
 	<input type="hidden" id="PAGE_INDEX" name="PAGE_INDEX"/>
 	
 	<br/>
-	<a href="#this" class="btn" id="write">글쓰기</a>
+	<a href="#this" class="btn" id="write">WRITE</a>
 	
 	<%@ include file="/WEB-INF/include/include-body.jsp" %>
 	<script type="text/javascript">

@@ -11,15 +11,15 @@
                 <col width="15%">
                 <col width="*"/>
             </colgroup>
-            <caption>게시글 작성</caption>
+            <caption>FORM</caption>
             <tbody>
                 <tr>
-                    <th scope="row">제목</th>
+                    <th scope="row">TITLE</th>
                     <td><input type="text" id="TITLE" name="TITLE" class="wdp_90"></input></td>
                 </tr>
                 <tr>
                     <td colspan="2" class="view_text">
-                        <textarea rows="20" cols="100" title="내용" id="CONTENTS" name="CONTENTS"></textarea>
+                        <textarea rows="20" cols="100" title="CONTENT" id="CONTENTS" name="CONTENTS"></textarea>
                     </td>
                 </tr>
             </tbody>
@@ -27,14 +27,14 @@
         <div id="fileDiv">
             <p>
                 <input type="file" id="file" name="file_0">
-                <a href="#this" class="btn" id="delete" name="delete">삭제</a>
+                <a href="#this" class="btn" id="delete" name="delete">DELETE</a>
             </p>
         </div>
          
         <br/><br/>
-        <a href="#this" class="btn" id="addFile">파일 추가</a>
-        <a href="#this" class="btn" id="write">작성하기</a>
-        <a href="#this" class="btn" id="list">목록으로</a>
+        <a href="#this" class="btn" id="addFile">FILE ADD</a>
+        <a href="#this" class="btn" id="write">WRITE</a>
+        <a href="#this" class="btn" id="list">LIST</a>
     </form>
      
     <%@ include file="/WEB-INF/include/include-body.jsp" %>
@@ -42,22 +42,22 @@
         var gfv_count = 1;
      
         $(document).ready(function(){
-            $("#list").on("click", function(e){ //목록으로 버튼
+            $("#list").on("click", function(e){ //Button for LIST
                 e.preventDefault();
                 fn_openBoardList();
             });
              
-            $("#write").on("click", function(e){ //작성하기 버튼
+            $("#write").on("click", function(e){ //Button for WRITE
                 e.preventDefault();
                 fn_insertBoard();
             });
              
-            $("#addFile").on("click", function(e){ //파일 추가 버튼
+            $("#addFile").on("click", function(e){ //Button for ADD
                 e.preventDefault();
                 fn_addFile();
             });
              
-            $("a[name='delete']").on("click", function(e){ //삭제 버튼
+            $("a[name='delete']").on("click", function(e){ //Button for DELETE
                 e.preventDefault();
                 fn_deleteFile($(this));
             });
@@ -76,9 +76,9 @@
         }
          
         function fn_addFile(){
-            var str = "<p><input type='file' name='file_"+(gfv_count++)+"'><a href='#this' class='btn' name='delete'>삭제</a></p>";
+            var str = "<p><input type='file' name='file_"+(gfv_count++)+"'><a href='#this' class='btn' name='delete'>DELETE</a></p>";
             $("#fileDiv").append(str);
-            $("a[name='delete']").on("click", function(e){ //삭제 버튼
+            $("a[name='delete']").on("click", function(e){ //Delete Button
                 e.preventDefault();
                 fn_deleteFile($(this));
             });

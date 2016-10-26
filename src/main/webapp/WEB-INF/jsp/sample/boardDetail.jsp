@@ -12,29 +12,29 @@
 			<col width="15%"/>
 			<col width="35%"/>
 		</colgroup>
-		<caption>게시글 상세</caption>
+		<caption>FORM</caption>
 		<tbody>
 			<tr>
-				<th scope="row">글 번호</th>
+				<th scope="row">SEQ</th>
 				<td>${map.IDX }</td>
-				<th scope="row">조회수</th>
+				<th scope="row">HITS</th>
 				<td>${map.HIT_CNT }</td>
 			</tr>
 			<tr>
-				<th scope="row">작성자</th>
+				<th scope="row">WRITER</th>
 				<td>${map.CREA_ID }</td>
-				<th scope="row">작성시간</th>
+				<th scope="row">DATE</th>
 				<td>${map.CREA_DTM }</td>
 			</tr>
 			<tr>
-				<th scope="row">제목</th>
+				<th scope="row">TITLE</th>
 				<td colspan="3">${map.TITLE }</td>
 			</tr>
 			<tr>
 				<td colspan="4">${map.CONTENTS }</td>
 			</tr>
 			<tr>
-				<th scope="row">첨부파일</th>
+				<th scope="row">Attached File</th>
 				<td colspan="3">				
 					<c:forEach var="row" items="${list }">
 						<p>
@@ -50,23 +50,23 @@
 	<br/>
 	
 	
-	<a href="#this" class="btn" id="list">목록으로</a>
-	<a href="#this" class="btn" id="update">수정하기</a>
+	<a href="#this" class="btn" id="list">LIST</a>
+	<a href="#this" class="btn" id="update">UPDATE</a>
 	
 	<%@ include file="/WEB-INF/include/include-body.jsp" %>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#list").on("click", function(e){ //목록으로 버튼
+			$("#list").on("click", function(e){ 
 				e.preventDefault();
 				fn_openBoardList();
 			});
 			
-			$("#update").on("click", function(e){ //수정하기 버튼
+			$("#update").on("click", function(e){ 
 				e.preventDefault();
 				fn_openBoardUpdate();
 			});
 			
-			$("a[name='file']").on("click", function(e){ //파일 이름
+			$("a[name='file']").on("click", function(e){ 
 				e.preventDefault();
 				fn_downloadFile($(this));
 			});
