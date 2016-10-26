@@ -26,17 +26,7 @@
             </snapshots>
         </repository>
          
-        <repository>
-            <id>egovframe</id>
-            <url>http://www.egovframe.go.kr/maven/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-         
+                
         <repository>
 	        <id>mvn2</id>
 	        <url>http://repo1.maven.org/maven2/</url>
@@ -211,7 +201,6 @@
             <version>1.0</version>
         </dependency>
              
-        <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -272,11 +261,8 @@
         </dependency>
          
         <!-- EgovProperty -->
-        <dependency>
-            <groupId>egovframework.rte</groupId>
-            <artifactId>egovframework.rte.fdl.property</artifactId>  
-            <version>2.7.0</version>
-        </dependency>
+       
+      
          
         <!-- Log4j -->
         <dependency>
@@ -342,7 +328,19 @@
             <version>4.7</version>
             <scope>test</scope>
         </dependency>   
-    </dependencies>
+        
+        <dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.6.4</version>
+		</dependency>
+		 
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.6.4</version>
+		</dependency>
+		    </dependencies>
      
      
     <build>
